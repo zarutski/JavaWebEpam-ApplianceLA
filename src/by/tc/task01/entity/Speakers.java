@@ -2,7 +2,7 @@ package by.tc.task01.entity;
 
 import java.util.Objects;
 
-public class Speakers extends Appliance {
+public class Speakers implements Appliance {
 
     private int powerConsumption;
     private int numOfSpeakers;
@@ -42,16 +42,6 @@ public class Speakers extends Appliance {
 
     public void setCordLength(int cordLength) {
         this.cordLength = cordLength;
-    }
-
-    @Override
-    public void print() {
-        String output = "Speakers: " +
-                "powerConsumption=" + powerConsumption +
-                ", numOfSpeakers=" + numOfSpeakers +
-                ", frequencyRange='" + frequencyRange + '\'' +
-                ", cordLength=" + cordLength;
-        System.out.println(output);
     }
 
     @Override
@@ -104,7 +94,7 @@ public class Speakers extends Appliance {
         }
 
         public Builder cordLength(int cordLength) {
-            newSpeakers.cordLength =cordLength ;
+            newSpeakers.cordLength = cordLength;
             return this;
         }
 

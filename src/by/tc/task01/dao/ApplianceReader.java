@@ -1,9 +1,10 @@
 package by.tc.task01.dao;
 
-import java.io.IOException;
+import by.tc.task01.dao.exception.DaoException;
+
 import java.util.List;
 
 public interface ApplianceReader {
 
-    List<String> loadGroup(String group) throws IOException;
+    List<String> loadGroup(String group) throws DaoException;
 }

@@ -1,6 +1,7 @@
 package by.tc.task01.dao.impl;
 
 import by.tc.task01.dao.ApplianceReader;
+import by.tc.task01.dao.exception.DaoException;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -14,7 +15,7 @@ import java.util.List;
 public class FileApplianceReader implements ApplianceReader {
 
     @Override
-    public List<String> loadGroup(String group) throws IOException {
+    public List<String> loadGroup(String group) throws DaoException {
 
         Path filePath = FileSystems.getDefault().getPath("resources" + File.separator + "appliances_db.txt");
         List<String> records = new ArrayList<>();
@@ -39,6 +40,8 @@ public class FileApplianceReader implements ApplianceReader {
 
                 records.add(currentLine);
             }
+        } catch (IOException e) {
+            throw new DaoException("Error reading file", e);
         }
 
         return records;

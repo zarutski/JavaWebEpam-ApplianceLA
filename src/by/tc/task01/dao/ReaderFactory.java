@@ -8,7 +8,8 @@ public final class ReaderFactory {
 
     private final ApplianceReader fileApplianceReader = new FileApplianceReader();
 
-    private ReaderFactory() {}
+    private ReaderFactory() {
+    }
 
     public ApplianceReader getFileApplianceReader() {
         return fileApplianceReader;

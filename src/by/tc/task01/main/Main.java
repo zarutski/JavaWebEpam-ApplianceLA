@@ -6,6 +6,7 @@ import by.tc.task01.entity.Appliance;
 import by.tc.task01.entity.criteria.Criteria;
 import by.tc.task01.service.ApplianceService;
 import by.tc.task01.service.ServiceFactory;
+import by.tc.task01.service.exception.ServiceException;
 
 import java.io.IOException;
 import java.util.List;
@@ -25,7 +26,7 @@ public class Main {
 
         try {
             appliances = service.find(criteriaOven);
-        } catch (IOException e) {
+        } catch (ServiceException e) {
             e.printStackTrace();
         }
 
@@ -43,7 +44,7 @@ public class Main {
 
         try {
             appliances = service.find(criteriaOven);
-        } catch (IOException e) {
+        } catch (ServiceException e) {
             e.printStackTrace();
         }
 
@@ -63,7 +64,7 @@ public class Main {
 
         try {
             appliances = service.find(criteriaTabletPC);
-        } catch (IOException e) {
+        } catch (ServiceException e) {
             e.printStackTrace();
         }
 

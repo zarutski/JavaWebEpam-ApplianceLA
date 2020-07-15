@@ -2,7 +2,7 @@ package by.tc.task01.entity;
 
 import java.util.Objects;
 
-public class TabletPC extends Appliance {
+public class TabletPC implements Appliance {
 
     private int batteryCapacity;
     private int displayInches;
@@ -51,17 +51,6 @@ public class TabletPC extends Appliance {
 
     public void setColor(String color) {
         this.color = color;
-    }
-
-    @Override
-    public void print() {
-        String output = "TablePC: " +
-                "batteryCapacity=" + batteryCapacity +
-                ", displayInches=" + displayInches +
-                ", memoryROM=" + memoryROM +
-                ", FlashMemoryCapacity=" + flashMemoryCapacity +
-                ", color=" + color;
-        System.out.println(output);
     }
 
     @Override
@@ -116,7 +105,7 @@ public class TabletPC extends Appliance {
         }
 
         public Builder flashMemoryCapacity(int flashMemoryCapacity) {
-            newTabletPC.flashMemoryCapacity =flashMemoryCapacity ;
+            newTabletPC.flashMemoryCapacity = flashMemoryCapacity;
             return this;
         }
 

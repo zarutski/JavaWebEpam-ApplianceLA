@@ -2,7 +2,7 @@ package by.tc.task01.entity;
 
 import java.util.Objects;
 
-public class Refrigerator extends Appliance {
+public class Refrigerator implements Appliance {
 
     private int powerConsumption;
     private int weight;
@@ -60,19 +60,6 @@ public class Refrigerator extends Appliance {
 
     public void setWidth(int width) {
         this.width = width;
-    }
-
-
-    @Override
-    public void print() {
-        String output = "Refrigerator: " +
-                "powerConsumption=" + powerConsumption +
-                ", weight=" + weight +
-                ", freezerCapacity=" + freezerCapacity +
-                ", overallCapacity=" + overallCapacity +
-                ", height=" + height +
-                ", width=" + width;
-        System.out.println(output);
     }
 
     @Override

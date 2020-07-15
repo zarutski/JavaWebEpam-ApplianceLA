@@ -2,7 +2,7 @@ package by.tc.task01.entity;
 
 import java.util.Objects;
 
-public class Laptop extends Appliance {
+public class Laptop implements Appliance {
 
     private double batteryCapacity;
     private String oc;
@@ -63,18 +63,6 @@ public class Laptop extends Appliance {
     }
 
     @Override
-    public void print() {
-        String output = "Laptop: " +
-                "batteryCapacity=" + batteryCapacity +
-                ", OC='" + oc + '\'' +
-                ", memoryROM=" + memoryRom +
-                ", systemMemory=" + systemMemory +
-                ", cpu=" + cpu +
-                ", displayInches=" + displayInches;
-        System.out.println(output);
-    }
-
-    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
@@ -128,7 +116,7 @@ public class Laptop extends Appliance {
         }
 
         public Builder systemMemory(int systemMemory) {
-            newLaptop.systemMemory =systemMemory ;
+            newLaptop.systemMemory = systemMemory;
             return this;
         }
 

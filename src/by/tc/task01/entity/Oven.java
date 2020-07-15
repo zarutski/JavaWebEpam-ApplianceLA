@@ -2,7 +2,7 @@ package by.tc.task01.entity;
 
 import java.util.Objects;
 
-public class Oven extends Appliance {
+public class Oven implements Appliance {
 
     private int powerConsumption;
     private int weight;
@@ -63,18 +63,6 @@ public class Oven extends Appliance {
     }
 
     @Override
-    public void print() {
-        String output = "Oven: " +
-                "powerConsumption=" + powerConsumption +
-                ", weight=" + weight +
-                ", capacity=" + capacity +
-                ", depth=" + depth +
-                ", height=" + height +
-                ", width=" + width;
-        System.out.println(output);
-    }
-
-    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
@@ -128,7 +116,7 @@ public class Oven extends Appliance {
         }
 
         public Builder depth(int depth) {
-            newOven.depth =depth ;
+            newOven.depth = depth;
             return this;
         }
 

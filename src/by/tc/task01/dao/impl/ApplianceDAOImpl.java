@@ -4,11 +4,11 @@ import by.tc.task01.dao.ApplianceDAO;
 import by.tc.task01.dao.ApplianceReader;
 import by.tc.task01.dao.ReaderFactory;
 import by.tc.task01.dao.RecordParser;
+import by.tc.task01.dao.exception.DaoException;
 import by.tc.task01.entity.Appliance;
 import by.tc.task01.entity.ApplianceFactory;
 import by.tc.task01.entity.criteria.Criteria;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -16,7 +16,7 @@ import java.util.Map;
 public class ApplianceDAOImpl implements ApplianceDAO {
 
     @Override
-    public List<Appliance> find(Criteria criteria) throws IOException {
+    public List<Appliance> find(Criteria criteria) throws DaoException {
 
         ReaderFactory readerFactory = ReaderFactory.getInstance();
         ApplianceReader reader = readerFactory.getFileApplianceReader();
